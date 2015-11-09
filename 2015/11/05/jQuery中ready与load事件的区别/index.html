@@ -1,0 +1,522 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>jQuery中ready与load事件的区别 | 青桔柠檬</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Hidden Feng">
+    
+
+    
+    <meta name="description" content="前言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery中ready与load事件的区别">
+<meta property="og:url" content="http://yoursite.com/2015/11/05/jQuery中ready与load事件的区别/index.html">
+<meta property="og:site_name" content="青桔柠檬">
+<meta property="og:description" content="前言">
+<meta property="og:updated_time" content="2015-11-06T12:00:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery中ready与load事件的区别">
+<meta name="twitter:description" content="前言">
+
+    
+    <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="青桔柠檬">青桔柠檬</a></h1>
+				<h2 class="blog-motto">TO MORE THAN I CAN BE</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/05/jQuery中ready与load事件的区别/" title="jQuery中ready与load事件的区别" itemprop="url">jQuery中ready与load事件的区别</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-05T09:30:15.000Z" itemprop="datePublished"> 发表于 2015-11-05</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<h2 id="前言">前言</h2><a id="more"></a>
+<h2 id="正文">正文</h2><p>一般用jQuery写函数的时候，一般会这样写：</p>
+<pre>
+<code>
+//document ready
+$(document).ready(function(){
+    ...code...
+})
+
+//document ready 简写
+$(function(){
+    ...code...
+})
+</code>
+</pre>
+
+<p>也有这样写的：</p>
+<pre>
+<code>
+//document load
+$(document).load(function(){
+    ...code...
+})
+</code>
+</pre>
+
+<p>一个是ready，一个是load，他们之间的区别是什么呢？</p>
+<h3 id="一般的DOM文档加载步骤">一般的DOM文档加载步骤</h3><p>可以从DOM文档加载的步骤中可以更好地理解ready与load的执行情况。由下图可以看到js等脚本会在DOM文档构造之前执行，这样js就无法访问DOM文档对象模型。所以<b>一般把可执行文本放在脚本放在页面初始化事件处理函数中，这样能确保js脚本在DOM文档结构加载完毕之后再执行。</b></p>
+<pre>
+<code>
+（1） 解析HTML结构和代码。
+（2） 加载外部脚本和样式表文件（外链js和css）；
+（3） 解析并执行脚本代码。
+（4） 构造 HTML DOM 模型。// ready
+（5） 加载图片、flash等外部文件。
+（6） 页面加载完毕。//load
+（7） AJAX 异步请求。
+</code>
+</pre>
+
+<h3 id="ready_事件">ready 事件</h3><p>ready特指<b>“DOM”全部加载完毕</b>，也就是说，只要DOM加载完毕就可以了，事件就能被自然触发。</p>
+<p>所谓的“DOM”加载完毕指<b>整个页面的标签部分全部加载完毕</b>，至于说某些标签内部可能存在着一系列事件未完成（如img标签可能加载远处一个很大的bmp图片尚未加载完毕等情况）则会被忽略。</p>
+<h3 id="load_事件">load 事件</h3><p>load事件必须等到网页中所有的内容全部加载完毕之后才被执行。如果一个网页很多图片，会出现这种情况，就是网页文档呈现出来了，但是由于网页数据还没有完全加载完毕，导致load时间不能够即使被触发。</p>
+<h2 id="总结">总结</h2><p>理解了 ready 和 load 之间的区别之后，可以明白，如果页面中没有太多图片之类的媒体文件的话，使用 ready 和 load 都是差不多的，但是如果页面中存在大量的媒体文件需要加载的话，最好还是使用ready。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/jQuery/">jQuery</a><a href="/tags/前端/">前端</a><a href="/tags/技术笔记/">技术笔记</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/11/05/jQuery中ready与load事件的区别/" data-title="jQuery中ready与load事件的区别 | 青桔柠檬" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/11/07/浏览器-加载，解析，渲染/" title="浏览器~加载，解析，渲染">
+  <strong>上一篇：</strong><br/>
+  <span>
+  浏览器~加载，解析，渲染</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/11/05/《锋利的jQuery》/"  title="《锋利的jQuery》">
+ <strong>下一篇：</strong><br/> 
+ <span>《锋利的jQuery》
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一般的DOM文档加载步骤"><span class="toc-number">2.1.</span> <span class="toc-text">一般的DOM文档加载步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ready_事件"><span class="toc-number">2.2.</span> <span class="toc-text">ready 事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#load_事件"><span class="toc-number">2.3.</span> <span class="toc-text">load 事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/英剧/" title="英剧">英剧<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m a little girl has a big heart. <br/>
+			This is my world of struggle,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Hidden Feng">Hidden Feng</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

@@ -1,0 +1,499 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>《跨终端web》读书笔记 | 青桔柠檬</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Hidden Feng">
+    
+
+    
+    <meta name="description" content="前言差不多半年前就买了这本书在看，当时对移动开发的概念没有理解，所以看不明白，不过，现在再拿出来看就是不一样的感觉，可能也是自己的学习方法有所改变的结果吧。接下来的都将会是我个人看书的所看所悟所想，仅代码个人见解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《跨终端web》读书笔记">
+<meta property="og:url" content="http://yoursite.com/2015/10/16/《跨终端web》读书笔记/index.html">
+<meta property="og:site_name" content="青桔柠檬">
+<meta property="og:description" content="前言差不多半年前就买了这本书在看，当时对移动开发的概念没有理解，所以看不明白，不过，现在再拿出来看就是不一样的感觉，可能也是自己的学习方法有所改变的结果吧。接下来的都将会是我个人看书的所看所悟所想，仅代码个人见解。">
+<meta property="og:updated_time" content="2015-10-16T14:30:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《跨终端web》读书笔记">
+<meta name="twitter:description" content="前言差不多半年前就买了这本书在看，当时对移动开发的概念没有理解，所以看不明白，不过，现在再拿出来看就是不一样的感觉，可能也是自己的学习方法有所改变的结果吧。接下来的都将会是我个人看书的所看所悟所想，仅代码个人见解。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="青桔柠檬">青桔柠檬</a></h1>
+				<h2 class="blog-motto">TO MORE THAN I CAN BE</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/10/16/《跨终端web》读书笔记/" title="《跨终端web》读书笔记" itemprop="url">《跨终端web》读书笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-16T00:37:07.000Z" itemprop="datePublished"> 发表于 2015-10-16</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<h2 id="前言">前言</h2><p>差不多半年前就买了这本书在看，当时对移动开发的概念没有理解，所以看不明白，不过，现在再拿出来看就是不一样的感觉，可能也是自己的学习方法有所改变的结果吧。<br><br>接下来的都将会是我个人看书的所看所悟所想，仅代码个人见解。<br><a id="more"></a></p>
+<h2 id="1_跨终端web">1 跨终端web</h2><p>要达到“跨终端web”的目的，除了被普遍认识的响应式方式之外，还有“多站点”“多模板”“多平台”的方式实现“跨终端”；之前的认识都是停留在了响应式中，虽然这个的确是使用最多的方式，但是对于DOM结构异常庞大复杂的页面而言，响应式还是有瓶颈：</p>
+<blockquote>
+<p>从工程实践来看，单个复杂响应式页面的维护成本并不比单独维护多个版本的页面成本低，并且由于响应式存在的内在耦合性，这个维护成本在复杂页面频繁更新时反而更高。响应式本质上是依靠CSS处理表现层面的差异，从笔者所接触到的工程实践来看，移动端和PC端存在的不仅仅时是展示上的差异，在交互形式上的巨大差异也会导致DOM结构上的差异，这种差异已经远远超出CSS所能控制的范围。</p>
+</blockquote>
+<h2 id="2_Mobile_Web">2 Mobile Web</h2><p>书中提到的文章</p>
+<ul>
+<li><a href="http://www.oceanstick.com/?p=500" target="_blank" rel="external"> viewport双城记 </a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag" target="_blank" rel="external"> 在移动浏览器中使用viewport元标签控制布局 </a></li>
+</ul>
+<p>到这里要停止一下，虽说不能急，不过目前来说需要的是学习技术，不然就找不到好工作了。</p>
+<h2 id="名言">名言</h2><blockquote>
+<p>“你如果出色地完成了某件事，那你应该再做一些其他的精彩事儿。不要在前一件事上徘徊太久，想想接下来该做什么”</p>
+</blockquote>
+<h2 id="参考与扩展阅读">参考与扩展阅读</h2><ul>
+<li><a href="http://www.cnblogs.com/mofish/p/3822879.html" target="_blank" rel="external"> 优雅降级和渐进增强的区别 </a> —— 开篇是看到了两个名词，这两个是两种不一样的前端开发思想，有必要了解清楚。</li>
+<li><a href="http://alloyteam.github.io/Spirit/modules/Standard/" target="_blank" rel="external"> 移动开发规范概述 </a> —— 中的参考文档也是很有价值。</li>
+<li><a href="http://luics.com/demo/d2/#/" target="_blank" rel="external"> 移动优先的跨终端Web </a> —— 该书的PPT</li>
+<li><a href="http://segmentfault.com/a/1190000000610133" target="_blank" rel="external"> 我为何写《跨终端 Web》这本书？ </a> —— 鬼道的亲笔附录</li>
+<li><a href="https://book.douban.com/subject/25909777/" target="_blank" rel="external"> 跨终端Web（豆瓣） </a> —— 豆瓣上面的评价各有各的说法，其实还是要自己阅读更多才能判断这本书的优劣，所以要是希望能有评论的资本，还是认真看完书本以及多阅读资料吧。</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/前端/">前端</a><a href="/tags/技术笔记/">技术笔记</a><a href="/tags/读书笔记/">读书笔记</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/10/16/《跨终端web》读书笔记/" data-title="《跨终端web》读书笔记 | 青桔柠檬" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/10/17/一个洗涤内心的下午/" title="一个洗涤内心的下午">
+  <strong>上一篇：</strong><br/>
+  <span>
+  一个洗涤内心的下午</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/10/15/2016-求职记录/"  title="2016 求职之路">
+ <strong>下一篇：</strong><br/> 
+ <span>2016 求职之路
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1_跨终端web"><span class="toc-number">2.</span> <span class="toc-text">1 跨终端web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2_Mobile_Web"><span class="toc-number">3.</span> <span class="toc-text">2 Mobile Web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#名言"><span class="toc-number">4.</span> <span class="toc-text">名言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考与扩展阅读"><span class="toc-number">5.</span> <span class="toc-text">参考与扩展阅读</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/英剧/" title="英剧">英剧<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m a little girl has a big heart. <br/>
+			This is my world of struggle,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Hidden Feng">Hidden Feng</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

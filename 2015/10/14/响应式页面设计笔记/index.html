@@ -1,0 +1,505 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>响应式页面设计笔记 | 青桔柠檬</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Hidden Feng">
+    
+
+    
+    <meta name="description" content="前言偶然的机会遇到了要做一个能适配移动设备的前端页面，所以就有了本文的横空出世，基于我之前做过一些移动设备的前端开发，故希望可以整理一下响应式页面的设计以及适配移动设备的异同，我喜欢条理清晰，目的明确的文章，然而我的语言表达并不能做到言简意赅，所以表述要是有所啰嗦，请提出。我会陆续证据经验进行文章的增删改。
+修改1：上面的表述只能说明是孤陋寡闻，以为会响应式就已经会移动开发中的前端开发，其实并不为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式页面设计笔记">
+<meta property="og:url" content="http://yoursite.com/2015/10/14/响应式页面设计笔记/index.html">
+<meta property="og:site_name" content="青桔柠檬">
+<meta property="og:description" content="前言偶然的机会遇到了要做一个能适配移动设备的前端页面，所以就有了本文的横空出世，基于我之前做过一些移动设备的前端开发，故希望可以整理一下响应式页面的设计以及适配移动设备的异同，我喜欢条理清晰，目的明确的文章，然而我的语言表达并不能做到言简意赅，所以表述要是有所啰嗦，请提出。我会陆续证据经验进行文章的增删改。
+修改1：上面的表述只能说明是孤陋寡闻，以为会响应式就已经会移动开发中的前端开发，其实并不为">
+<meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/bg2012050107.jpg">
+<meta property="og:updated_time" content="2015-10-16T00:41:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式页面设计笔记">
+<meta name="twitter:description" content="前言偶然的机会遇到了要做一个能适配移动设备的前端页面，所以就有了本文的横空出世，基于我之前做过一些移动设备的前端开发，故希望可以整理一下响应式页面的设计以及适配移动设备的异同，我喜欢条理清晰，目的明确的文章，然而我的语言表达并不能做到言简意赅，所以表述要是有所啰嗦，请提出。我会陆续证据经验进行文章的增删改。
+修改1：上面的表述只能说明是孤陋寡闻，以为会响应式就已经会移动开发中的前端开发，其实并不为">
+
+    
+    <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="青桔柠檬">青桔柠檬</a></h1>
+				<h2 class="blog-motto">TO MORE THAN I CAN BE</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/10/14/响应式页面设计笔记/" title="响应式页面设计笔记" itemprop="url">响应式页面设计笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-13T23:58:57.000Z" itemprop="datePublished"> 发表于 2015-10-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<h2 id="前言">前言</h2><p>偶然的机会遇到了要做一个能适配移动设备的前端页面，所以就有了本文的横空出世，基于我之前做过一些移动设备的前端开发，故希望可以整理一下响应式页面的设计以及适配移动设备的异同，我喜欢条理清晰，目的明确的文章，然而我的语言表达并不能做到言简意赅，所以表述要是有所啰嗦，请提出。我会陆续证据经验进行文章的增删改。</p>
+<p>修改1：上面的表述只能说明是孤陋寡闻，以为会响应式就已经会移动开发中的前端开发，其实并不为然。响应式网页设计只是移动优先的跨终端web中的其中给一个手段，所以还不算做个移动开发，只能算是做过响应式开发。</p>
+<a id="more"></a>
+<p>本文将从以下几个方面进行笔记：</p>
+<ul>
+<li>响应式的定义以及提出由来</li>
+<li>响应式页面的基本要领</li>
+<li>移动适配的要点</li>
+<li>响应式页面以及移动适配的共同点</li>
+</ul>
+<center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/bg2012050107.jpg" alt=""><br></center>
+
+<h2 id="一、响应式页面定义_Responsive_Page">一、响应式页面定义 Responsive Page</h2><p><a href="http://baike.baidu.com/link?url=42wYcZBLyT-T1W_4V0tHKUXHwPJSw4PNeb_N0Cmb4eCnVmH-9ve8k7EM9bpFvuuZUhW70i9Qbx5ovpqd8AcrN_#4_6" target="_blank" rel="external">百度百科</a>上面的解释已经比较全面了，最喜欢的一句话就是：响应式设计更像是一种对于设计的全新思维模式。<br><br><a href="https://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1" target="_blank" rel="external">维基百科</a>上面的记录了一种 <a href="https://en.wikipedia.org/wiki/Progressive_enhancement" target="_blank" rel="external">渐进增强</a> 的思路，感觉与百度百科所记录的思路不一样，<a href="http://baike.baidu.com/link?url=42wYcZBLyT-T1W_4V0tHKUXHwPJSw4PNeb_N0Cmb4eCnVmH-9ve8k7EM9bpFvuuZUhW70i9Qbx5ovpqd8AcrN_#4_6" target="_blank" rel="external"> 百度百科 </a>的比较常规和正式以及详细，然而<a href="https://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1" target="_blank" rel="external"> 维基百科 </a>上面的描述的和百度百科的没有太多的重复却做到了扩展我们视野的目的，不过维基百科上面出现了很多新的名词，<span style="color:red">有待深究</span>。</p>
+<h2 id="二、相应式页面的基本要领">二、相应式页面的基本要领</h2><p>这部分在<a href="http://www.cnblogs.com/Wayou/p/responsive_design_step_by_step.html" target="_blank" rel="external"> 响应式网页设计简单入门 </a>中已经阐述的比较详细了，从布局,加载样式表，字体，图片都已经做了基本的简单介绍，虽然并没有很详尽，不过作为入门已经做的很好了。</p>
+<h3 id="允许网页宽度自适应_——_修改"><strong>允许网页宽度自适应 —— 修改<head></head></strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> </span><br><span class="line">	<span class="attribute">content</span>=<span class="value">"</span><br><span class="line">		width  = [ pixel_value | device-height ],</span><br><span class="line">		height = [ pixel_value | divice-width ],</span><br><span class="line">		initial-scale = float_value,</span><br><span class="line">		minimum-scale = float_value,</span><br><span class="line">		maximum-scale = float_value,</span><br><span class="line">		user-scalable = [ yes | no ], </span><br><span class="line">		target-densitydpi = [ dpi_value | device-dpi | </span><br><span class="line">		high-dpi | medium-dpi | low-dpi]</span><br><span class="line">	"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这上面的viewport是html5新添加的，每一个属性都是有意义的，当然，对于自适应来说，只要添加一句基本就可以了。<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;</code>，已经可以做到网页宽度自适应了。</p>
+<p>据说主流的浏览器都支持这个设置，除了（IE6、7、8），网上面有不少这方面的介绍，不过感觉都是没有实践过直接复制别人的贴的，在这里我也没有自己实践过，因为没有IE6、7、8做测试，所以没有做，不过<a href="http://blog.sina.com.cn/s/blog_601b97ee0101asz3.html" target="_blank" rel="external"> 这篇文章 </a>已经表述的比较清楚了，有条件的时候再<span style="color:red"> 深究 </span>一番。</p>
+<h3 id="不使用绝对宽度"><strong>不使用绝对宽度</strong></h3><p>由于屏幕宽度要调整布局，所以不能使用绝对宽度的元素，只能使用百分比像素，在移动端开发的时候也是尽可能使用百分比像素的，这样的话，可以不用在媒体查询的时候每个都写一个宽度，貌似目前流行的都是这样写，不过不知道还有没有更加好的解决方式。不过现在基本写代码的时候都是高度自适应以及宽度百分比的吧。</p>
+<h3 id="相对字体大小"><strong>相对字体大小</strong></h3><p>字体大小的单位有px、em、rem；要使字体大小缩放的更加具体一些的最好使用相对大小，css中比较常用的指定字体相对大小的单位有百分比，em以及css3新增的rem。</p>
+<p><a href="http://www.cnblogs.com/Wayou/p/responsive_design_step_by_step.html" target="_blank" rel="external"> 响应式网页设计简单入门 </a> 这篇文章对于字体缩放的表述还是很详细的，这里就不重复了，不过至于哪一种方式更加适合还是实践之后才会比较清楚。</p>
+<h2 id="参考与扩展阅读">参考与扩展阅读</h2><ol><br><li> <a href="http://www.dimensionstoolkit.com/" target="_blank" rel="external"> Responsive Testing </a> ——  这个工具可以预览所设计的页面再不同设备上的效果，之前直接使用chrome自带的测试工具，虽然可以边调试边预览，不过觉得预览的效果不够强大，现在这个工具可以，所以相互使用还是不错的。</li><br><li> <a href="http://www.360doc.com/content/14/0807/11/9316347_400053037.shtml" target="_blank" rel="external"> css响应式设计 </a> —— 这个一个关于响应式的图片处理的分析文章，上面提到的技术我觉得不仅可以适应于响应式，还可以使用与webapp开发，因为现在很过会使用平板还打开webapp，所以对于图片的处理还是可以接受的。（至于这个是不是必要以及主流的<span style="color:red">有待深究</span>，因为现在平板的尺寸更多，是直接使用pc的大小就可以还是要另外适配呢？这也是一个问题）</li><br><li> <a href="http://www.cnblogs.com/Wayou/p/responsive_design_step_by_step.html" target="_blank" rel="external"> 响应式网页设计简单入门 </a> —— 这是一篇比较详细的文档，练手的可以参考。</li><br><li> <a href="http://www.ruanyifeng.com/blog/2012/05/responsive_web_design.html" target="_blank" rel="external"> 自适应网页设计（Responsive Web Design） </a></li><br></ol>
+
+<p>越看越觉得其实响应式的文章已经比较多了，而且记录的也是比较全的，那我要做的是什么，重复别人的内容？应该不是吧，我写这个博客的目的值整理我自己脑海中的知识，搭建系统的架构，这才是我撰写博客的目的，虽然重复的内容会有很多，但是，只有我自己时间过，编写出来的才是我自己整理的，才是属于我自己的知识架构。<br><br>大家有经验的跪求分享呀，转载的话表明出处哈。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/前端/">前端</a><a href="/tags/技术笔记/">技术笔记</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/10/14/响应式页面设计笔记/" data-title="响应式页面设计笔记 | 青桔柠檬" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/10/15/2016-求职记录/" title="2016 求职之路">
+  <strong>上一篇：</strong><br/>
+  <span>
+  2016 求职之路</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/10/05/TV-series-真实的人类/"  title="《真实的人类》观后感">
+ <strong>下一篇：</strong><br/> 
+ <span>《真实的人类》观后感
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、响应式页面定义_Responsive_Page"><span class="toc-number">2.</span> <span class="toc-text">一、响应式页面定义 Responsive Page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、相应式页面的基本要领"><span class="toc-number">3.</span> <span class="toc-text">二、相应式页面的基本要领</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#允许网页宽度自适应_——_修改"><span class="toc-number">3.1.</span> <span class="toc-text">允许网页宽度自适应 —— 修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不使用绝对宽度"><span class="toc-number">3.2.</span> <span class="toc-text">不使用绝对宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对字体大小"><span class="toc-number">3.3.</span> <span class="toc-text">相对字体大小</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考与扩展阅读"><span class="toc-number">4.</span> <span class="toc-text">参考与扩展阅读</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活/" title="生活">生活<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/英剧/" title="英剧">英剧<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m a little girl has a big heart. <br/>
+			This is my world of struggle,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Hidden Feng">Hidden Feng</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

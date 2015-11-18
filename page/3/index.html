@@ -1,29 +1,58 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>我 | 青桔柠檬</title>
+    <title>青桔柠檬</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Hidden Feng">
     
 
     
-    <meta name="description" content="联系方式
-QQ：905102996">
-<meta property="og:type" content="article">
-<meta property="og:title" content="我">
-<meta property="og:url" content="http://yoursite.com/2015/10/17/我/index.html">
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="青桔柠檬">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="青桔柠檬">
-<meta property="og:description" content="联系方式
-QQ：905102996">
-<meta property="og:updated_time" content="2015-10-21T15:03:58.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我">
-<meta name="twitter:description" content="联系方式
-QQ：905102996">
+<meta name="twitter:title" content="青桔柠檬">
+<meta name="twitter:description">
 
     
     <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
@@ -73,89 +102,127 @@ QQ：905102996">
 </div>
     </header>
     <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-  
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
+      
+<div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/17/我/" title="我" itemprop="url">我</a>
+      <a href="/2015/10/05/TV-series-真实的人类/" title="《真实的人类》观后感" itemprop="url">《真实的人类》观后感</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-17T15:47:03.000Z" itemprop="datePublished"> 发表于 2015-10-17</time>
+    <time datetime="2015-10-05T08:04:08.000Z" itemprop="datePublished"> 发表于 2015-10-05</time>
     
   </p>
 </header>
-	<div class="article-content">
-		
-		<h3 id="联系方式">联系方式</h3><ul>
-<li>QQ：905102996</li>
-</ul>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=28661549&auto=0&height=66"></iframe>
-  
-	</div>
-		<footer class="article-footer clearfix">
+    <div class="article-content">
+        
+        <center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/humans.jpg" alt=""><br></center>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/10/05/TV-series-真实的人类/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
 <div class="article-catetags">
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/联系我/">联系我</a>
+  <span></span> <a href="/tags/英剧/">英剧</a><a href="/tags/观后感/">观后感</a>
   </div>
 
 </div>
 
 
 
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://yoursite.com/2015/10/17/我/" data-title="我 | 青桔柠檬" data-tsina="null" class="share clearfix">
-	  </div>
-	
-	</div>
 
+<div class="comments-count">
+	
+</div>
 
 </footer>
 
-   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2015/10/24/2014-程序员的日子/" title="&#39;2014&#39;程序员的节日">
-  <strong>上一篇：</strong><br/>
-  <span>
-  &#39;2014&#39;程序员的节日</span>
-</a>
-</div>
+
+    </article>
 
 
-<div class="next">
-<a href="/2015/10/17/一个洗涤内心的下午/"  title="一个洗涤内心的下午">
- <strong>下一篇：</strong><br/> 
- <span>一个洗涤内心的下午
-</span>
-</a>
-</div>
 
-</nav>
 
-	
 
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#联系方式"><span class="toc-number">1.</span> <span class="toc-text">联系方式</span></a></li></ol>
- 
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/10/03/css-多用组合少用继承的探讨/" title="css-&quot;多用组合，少用继承&quot;的探讨" itemprop="url">css-&quot;多用组合，少用继承&quot;的探讨</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-03T07:53:43.000Z" itemprop="datePublished"> 发表于 2015-10-03</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>之前看了曹刘阳先生的《编写高质量代码-web前端开发修炼之道》这边书，对书中的</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/css/">css</a>
   </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -172,19 +239,23 @@ QQ：905102996">
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -196,10 +267,6 @@ QQ：905102996">
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -208,7 +275,7 @@ QQ：905102996">
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -217,6 +284,14 @@ QQ：905102996">
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -339,89 +414,12 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
 });
 </script>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
-  var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
-  $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
 
 
 
@@ -482,4 +480,4 @@ $(document).ready(function(){
 <!-- Tiny_search End -->
 
   </body>
-</html>
+ </html>

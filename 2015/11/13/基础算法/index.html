@@ -1,26 +1,59 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>Javascript中post和get | 青桔柠檬</title>
+    <title>基础算法 | 青桔柠檬</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Hidden Feng">
     
 
     
-    <meta name="description" content="前言在javascript中对于post和get并没有实践太多，以下的论述都是参考网上的资料的，等日后有深入的实践研究后在补充完善。">
+    <meta name="description" content="在数学和计算机科学/算学之中，算法/算则法为一个计算的具体步骤，常用于计算、数据处理和自动推理。精准而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法代表着用系统的方法描述解决问题的策略机制。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript中post和get">
-<meta property="og:url" content="http://yoursite.com/2015/11/07/Javascript中post和get/index.html">
+<meta property="og:title" content="基础算法">
+<meta property="og:url" content="http://yoursite.com/2015/11/13/基础算法/index.html">
 <meta property="og:site_name" content="青桔柠檬">
-<meta property="og:description" content="前言在javascript中对于post和get并没有实践太多，以下的论述都是参考网上的资料的，等日后有深入的实践研究后在补充完善。">
-<meta property="og:updated_time" content="2015-11-07T13:39:42.000Z">
+<meta property="og:description" content="在数学和计算机科学/算学之中，算法/算则法为一个计算的具体步骤，常用于计算、数据处理和自动推理。精准而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法代表着用系统的方法描述解决问题的策略机制。">
+<meta property="og:updated_time" content="2015-11-13T03:13:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript中post和get">
-<meta name="twitter:description" content="前言在javascript中对于post和get并没有实践太多，以下的论述都是参考网上的资料的，等日后有深入的实践研究后在补充完善。">
+<meta name="twitter:title" content="基础算法">
+<meta name="twitter:description" content="在数学和计算机科学/算学之中，算法/算则法为一个计算的具体步骤，常用于计算、数据处理和自动推理。精准而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法代表着用系统的方法描述解决问题的策略机制。">
 
     
     <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
@@ -76,39 +109,29 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/07/Javascript中post和get/" title="Javascript中post和get" itemprop="url">Javascript中post和get</a>
+      <a href="/2015/11/13/基础算法/" title="基础算法" itemprop="url">基础算法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-07T12:13:43.000Z" itemprop="datePublished"> 发表于 2015-11-07</time>
+    <time datetime="2015-11-13T01:54:02.000Z" itemprop="datePublished"> 发表于 2015-11-13</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h2 id="前言">前言</h2><p>在javascript中对于post和get并没有实践太多，以下的论述都是参考网上的资料的，等日后有深入的实践研究后在补充完善。</p>
-<a id="more"></a>
-<h3 id="get_与_post_的区别">get 与 post 的区别</h3><ul>
-<li><p>在数据传输中分别对应了HTTP协议中的GET和POST方法；</p>
-</li>
-<li><p><b>与服务器上的数据交互方式不同。</b>GET是用来从服务器上获得数据，而POST是用来向服务器上传递数据的；</p>
-</li>
-<li><p><b>与服务器的数据交互形式不同。</b>GET将表单中的数据按照 variable=value 的形式，添加到 action 所指向的URL后面，并且两者使用 ‘ ? ’ 连接，而各个变量之间使用 ‘ &amp; ’连接；POST是将表单中的数据放在form的数据体重，按照变量和值相对应的方式，传递到 action 所指向的URL；</p>
-</li>
-<li><p><b>安全性不同。</b>GET是不安全的，因为在传输过程，数据被放在请求的URL中，而如今现有的很多服务器、代理服务器或者用户代理都会将请求URL记录到日志文件中，然后放在某个位置，这样就也可以有一些隐式的数据会被第三方看到。另外，用户可以在浏览器直接看到提交的数据，一些系统内部消息将会一同显示在用户面前。而POST的所有数据对于用户来书都是不可见的；</p>
-</li>
-<li><p><b>传输的数据量不同。</b>GET传输的数据量小，大约传递1024字节，这主要是受URL长度限制；而POST可以传输大量的数据，可达2M，所以在上传文件只能使用POST。</p>
-</li>
-<li><p><b>传输的数量集的值不同。</b>GET限制FORM表单的数据集的值必须为ASCII字符；而POST支持整个ISO10646字符集。</p>
-</li>
-<li><p>GET是FORM的默认方法。</p>
-</li>
-</ul>
-<h3 id="参考资料">参考资料</h3><ul>
-<li><a href="http://blog.csdn.net/hdchangchang/article/details/11633823" target="_blank" rel="external">js笔记 - ajax中的get和post说明</a></li>
+		<p>在数学和计算机科学/算学之中，<span style="color:#ea6753">算法/算则法</span>为一个计算的具体步骤，常用于计算、数据处理和自动推理。精准而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法代表着用系统的方法描述解决问题的策略机制。</p>
+<a id="more"></a> 
+<h3 id="穷举法（枚举法）"><span style="color:#ea6753">穷举法（枚举法）</span></h3><p><b>原理： </b>根据一定的条件，列出问题的所有可能解，然后对所有情况进行验证，得到最后解或无解。</p>
+<p><b>例：</b> 设有A、B、C、D四个数都在1~16范围内。要求打印四个数都不相同时，其和为34的所有值。</p>
+<p><b>算法分析：</b><br>最直接的想法就是设置A\B\C\D四个变量，都从1-16循环。需要16<em>16</em>16*16次。且循环中还必须判断4个数是否有重复的情况。<br>但是题目提及四个数都不同，故，设A&lt;B&lt;C&lt;D，A的初值为1，B的初值为A+1，C的初始值为B+1，D的初始值为C+1。<br>每次循环的最终以可以算出来：</p>
+<p><pre><br>A + (A+1) + (A+1+1) + (A+1+1+1) = 34     A = 7<br>1 + B + (B+1) + (B+1+1) = 34             B = 10<br>1 + 2 + C + (C+1) = 34                   C = 15<br>1 + 2 + 3 + D =34                        D = 28<br></pre><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a,b,c,d;</span><br><span class="line"><span class="keyword">for</span>(a = <span class="number">1</span>;a&lt;=<span class="number">7</span>;a++)</span><br><span class="line">  <span class="keyword">for</span>(b = a+<span class="number">1</span>;b&lt;=<span class="number">10</span>;b++)</span><br><span class="line">    <span class="keyword">for</span>(c = b+<span class="number">1</span>;c&lt;=<span class="number">15</span>;c++)</span><br><span class="line">      <span class="keyword">for</span>(d = c+<span class="number">1</span>;d&lt;=<span class="number">10</span>;d++)</span><br><span class="line">        <span class="keyword">if</span>(a+b+c+d == <span class="number">34</span>)</span><br><span class="line">      <span class="built_in">console</span>.log(a,b,c,d); <span class="comment">// 7 8 9 10</span></span><br></pre></td></tr></table></figure></p>
+<p><b>算法局限：</b>当一个问题的状态空间很大时，穷举法的计算量可能会太大。</p>
+<h3 id="贪心算法"><span style="color:#ea6753">贪心算法</span></h3><h3 id="回溯算法"><span style="color:#ea6753">回溯算法</span></h3><h2 id="参考资料">参考资料</h2><ul>
+<li><a href="http://www.docin.com/p-675894875.html" target="_blank" rel="external">基本算法选讲 - 中国科学技术大学</a></li>
+<li><a href="http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741376.html" target="_blank" rel="external">五大常用算法之四：回溯法</a></li>
 </ul>
   
 	</div>
@@ -118,7 +141,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/前端/">前端</a><a href="/tags/技术笔记/">技术笔记</a>
+  <span></span> <a href="/tags/算法/">算法</a>
   </div>
 
 </div>
@@ -127,7 +150,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/11/07/Javascript中post和get/" data-title="Javascript中post和get | 青桔柠檬" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/11/13/基础算法/" data-title="基础算法 | 青桔柠檬" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -141,18 +164,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/11/09/Ajax详解/" title="Ajax详解">
+ <a href="/2015/11/13/MISSYOU/" title="MISSYOU">
   <strong>上一篇：</strong><br/>
   <span>
-  Ajax详解</span>
+  MISSYOU</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/11/07/浏览器-加载，解析，渲染/"  title="浏览器~加载，解析，渲染">
+<a href="/2015/11/12/复杂且奇葩的div-css布局/"  title="复杂且奇葩的div+css布局">
  <strong>下一篇：</strong><br/> 
- <span>浏览器~加载，解析，渲染
+ <span>复杂且奇葩的div+css布局
 </span>
 </a>
 </div>
@@ -167,7 +190,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get_与_post_的区别"><span class="toc-number">1.1.</span> <span class="toc-text">get 与 post 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">1.2.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#穷举法（枚举法）"><span class="toc-number">1.</span> <span class="toc-text">穷举法（枚举法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪心算法"><span class="toc-number">2.</span> <span class="toc-text">贪心算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回溯算法"><span class="toc-number">3.</span> <span class="toc-text">回溯算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number"></span> <span class="toc-text">参考资料</span></a>
  
   </div>
 
@@ -186,19 +209,23 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -210,10 +237,6 @@
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -222,7 +245,7 @@
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -231,6 +254,14 @@
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>

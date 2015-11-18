@@ -1,29 +1,60 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | 青桔柠檬</title>
+    <title>笔试题-数据结构&amp;数据库 | 青桔柠檬</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Hidden Feng">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="目前这些题目基本都是腾讯历届的校招题目。在ppmoney的在线测试中找到的，整理一下，顺便可以回顾一下相关的知识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/09/30/hello-world/index.html">
+<meta property="og:title" content="笔试题-数据结构&数据库">
+<meta property="og:url" content="http://yoursite.com/2015/11/17/笔试题-数据结构/index.html">
 <meta property="og:site_name" content="青桔柠檬">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-09-30T01:29:57.000Z">
+<meta property="og:description" content="目前这些题目基本都是腾讯历届的校招题目。在ppmoney的在线测试中找到的，整理一下，顺便可以回顾一下相关的知识。">
+<meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/shenduyouxian.png">
+<meta property="og:updated_time" content="2015-11-17T13:10:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="笔试题-数据结构&数据库">
+<meta name="twitter:description" content="目前这些题目基本都是腾讯历届的校招题目。在ppmoney的在线测试中找到的，整理一下，顺便可以回顾一下相关的知识。">
 
     
     <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
@@ -79,33 +110,56 @@ Quick">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/09/30/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2015/11/17/笔试题-数据结构/" title="笔试题-数据结构&amp;数据库" itemprop="url">笔试题-数据结构&amp;数据库</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-30T01:29:57.000Z" itemprop="datePublished"> 发表于 2015-09-30</time>
+    <time datetime="2015-11-17T03:09:36.000Z" itemprop="datePublished"> 发表于 2015-11-17</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p>目前这些题目基本都是腾讯历届的校招题目。在ppmoney的在线测试中找到的，整理一下，顺便可以回顾一下相关的知识。</p>
+<a id="more"></a>
+<p>数据结构</p>
+<p><b>1.避免死锁的一个著名的算法是（）</b><br>A.先入先出法<br><span style="color:red">B.银行家算法</span><br>C.优先级算法<br>D.资源按需分配法</p>
+<p>题解：<br>优先级调度：当该算法用于作业调度时，系统从后背作业队列中选择若干个优先级最高的，且系统能满足资源要求的作业装入内存运行；当该算法用于进程调度时，将把处理机分配给就绪进行队列中优先级最高的进程。<br>银行家算法：是一种避免死锁的著名算法。操作系统按照银行家制定的规则为进程分配资源时，要测试该进程对资源的最大需求量，如果系统现存的资源可以满足它的最大请求量则按当前的申请量分配资源，否则就推迟分配，当进程在执行中继续申请资源时，先测试该进程本次申请的资源数是否超过了该资源所剩余的总量。若超过则拒绝分配资源，若能满足则按当前的申请量分配资源，否则也要推迟分配。<br></p><p></p>
+<p><b>2.现有一个包含m个节点的三叉树，即每个节点都有三个指向孩子节点的指针，请问：在这3m个指针中有（）个空指针。</b><br>A.2m<br>B.2m-1<br><span style="color:red">C.2m+1</span><br>D.3m</p>
+<p>题解：这题在网上的解释是这样的：m个节点共有3m个指针，而除了根节点外每个节点都有父节点（即需要占用一个父节点的指针），所以空指针数为3m-（m-1） = 2m+1。但是，我没有看懂这个的题解是什么意思，我对这道题目的理解是这样的：空指针的存在只会是在叶子节点，所以只要找到叶子节点数，再找出与m到关系即可得到题解。上面的解释有理解的来指点一下吧。</p>
+<p><b>5.下列排序算法中，初始数据集合对排序性能无影响的是（）</b><br>A.插入排序<br><span style="color:red">B.堆排序</span><br>C.冒泡排序<br>D.快速排序</p>
+<p>题解：<br>若序列事先已经基本有序，则插入法和冒泡法会明显减少比较次数，快速排序法与主元的选择有关，若一般选子序列左侧第一个元素比较，则第一个元素最好是大小居中，以使得分成的两个字数组长度大致相等，性能才能最佳，所以快速排序也与初始输入集有关的。<a href="http://www.cnblogs.com/dolphin0520/archive/2011/10/06/2199741.html" target="_blank" rel="external">堆排序</a>受数据集输入顺序影响最小。</p>
+<p><b>6.二分查找在一个有序序列中的时间复杂度为（）</b><br>A.O(N)<br><span style="color:red">B.O(logN)</span><br>C.O(N<em>N)<br>D.O(N</em>logN)</p>
+<p><b>7.路由器工作在网络模型中的哪一层（）</b><br>A.数据链路层<br>B.物理层<br><span style="color:red">C.网络层</span><br>D.应用层</p>
+<p>题解：<br>物流层 — 网线，集线器<br>数据链路层 — 网卡，网桥<br>网络层 — 路由器</p>
+<p><b>9.使用深度优先算法遍历下面的图，遍历的顺序为（）</b><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/shenduyouxian.png" alt=""><br><span style="color:red">A.ABCDEFHIG</span><br>B.BCEHIFGDA<br>C.ABCEFHIGD<br>C.HIFEGBCDA</p>
+<p>题解：<br><a href="http://rapheal.iteye.com/blog/1526863" target="_blank" rel="external">深度优先搜索(DFS)</a></p>
+<p><br><br><br>数据库</p>
+<p><b>3.数据库表设计最合理到是（）</b><br><span style="color:red">A.学生{id,name,age}，学科{id,name}，分数{学生id，学科id，分数}</span><br>B.学生{id,name,age}，分数{学生id，学科名称，分数}<br>C.分数{学生姓名，学科名称，分数}<br>D.学科{id，name}，分数{学生姓名，学科id，分数}</p>
+<p>题解：根据一个对象一个表的原则，选择的是A，这样得到的表都会是比较合理的。</p>
+<p><b>4.在数据库系统中，产生数据不一致的根本原因是（）</b><br>A.数据存储量太大<br>B.没有严格保护数据<br>C.未对数据进行完整性控制<br><span style="color:red">D.数据冗余</span></p>
+<p>题解：<br>数据库中有可能会存在不一致的数据。<br>造成数据不一致的原因主要有：</p>
+<ul>
+<li>数据冗余。如数据库中存在冗余数据，比如两张表中都存储了用户的联系电话，在用户电话号码发生改变时，如果只更新了一张表，那么两张表中的数据就不一致；</li>
+<li>并发控制不当。比如某个订票系统中，两个用户在同一时间定同一张票，如果并发控制不当，可能会导致一张票被链两个用户预定的情况，这当然与原数据的设计有关；</li>
+<li>故障和错误。如果软硬件发生故障造成数据丢失等情况，也有可能引起数据不一致的情况。</li>
+</ul>
+<p><b>8.对于满足SQL93标准的SQL语句：select foo,count(foo) from pokes where foo &gt; 10 group by foo having count(*) &gt; 5 order by foo,其执行顺序应该是（）</b></p>
+<p><span style="color:red">A.form–where–group by–having–select–order by</span><br>B.from–group by–where–having–select–order by<br>C.from–where–group by–having-order by–select<br>D.from–where–order by–group by–having–select</p>
+<p>题解：SQL select语句完整的执行顺序：<br>1）from子句组装来自不同数据源的数据；<br>2）where子句基于指定的条件对记录进行筛选；<br>3）group by 子句将数据划分为多个分组；<br>4）使用聚焦函数进行计算；<br>5）使用having子句筛选分组；<br>6）计算所有的表达式；<br>7）使用order by对结果集进行排序。<br>只有select选出了相应的表才能对其排序，删除之类的操作，因此合理的答案应该是 from–where–group by–having–select–order by</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/算法/">算法</a>
+  </div>
 
 </div>
 
@@ -113,7 +167,7 @@ Quick">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/09/30/hello-world/" data-title="Hello World | 青桔柠檬" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/11/17/笔试题-数据结构/" data-title="笔试题-数据结构&amp;数据库 | 青桔柠檬" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -126,14 +180,14 @@ Quick">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/03/css-多用组合少用继承的探讨/" title="css-&quot;多用组合，少用继承&quot;的探讨">
-  <strong>上一篇：</strong><br/>
-  <span>
-  css-&quot;多用组合，少用继承&quot;的探讨</span>
+
+<div class="next">
+<a href="/2015/11/13/MISSYOU/"  title="MISSYOU">
+ <strong>下一篇：</strong><br/> 
+ <span>MISSYOU
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -145,7 +199,7 @@ Quick">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ 
  
   </div>
 
@@ -164,19 +218,23 @@ Quick">
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -188,10 +246,6 @@ Quick">
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -200,7 +254,7 @@ Quick">
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -209,6 +263,14 @@ Quick">
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>

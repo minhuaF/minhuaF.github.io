@@ -1,3 +1,36 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
@@ -230,19 +263,23 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -254,10 +291,6 @@
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -266,7 +299,7 @@
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -275,6 +308,14 @@
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>

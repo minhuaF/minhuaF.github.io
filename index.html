@@ -1,3 +1,36 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
@@ -69,7 +102,288 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
+      
+<div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/17/笔试题-数据结构/" title="笔试题-数据结构&amp;数据库" itemprop="url">笔试题-数据结构&amp;数据库</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-17T03:09:36.000Z" itemprop="datePublished"> 发表于 2015-11-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>目前这些题目基本都是腾讯历届的校招题目。在ppmoney的在线测试中找到的，整理一下，顺便可以回顾一下相关的知识。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/11/17/笔试题-数据结构/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/算法/">算法</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/13/MISSYOU/" title="MISSYOU" itemprop="url">MISSYOU</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-13T10:20:46.000Z" itemprop="datePublished"> 发表于 2015-11-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>莫名突然好想你</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/11/13/MISSYOU/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/心情寄语/">心情寄语</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/13/基础算法/" title="基础算法" itemprop="url">基础算法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-13T01:54:02.000Z" itemprop="datePublished"> 发表于 2015-11-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>在数学和计算机科学/算学之中，<span style="color:#ea6753">算法/算则法</span>为一个计算的具体步骤，常用于计算、数据处理和自动推理。精准而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法代表着用系统的方法描述解决问题的策略机制。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/11/13/基础算法/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/算法/">算法</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/12/复杂且奇葩的div-css布局/" title="复杂且奇葩的div+css布局" itemprop="url">复杂且奇葩的div+css布局</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-12T09:19:48.000Z" itemprop="datePublished"> 发表于 2015-11-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>对于 div+css 的布局，在前端的面试或笔试中会不时就遇到，对于一些比较复杂的，听起来很奇葩的布局，通常没有经验或者学习过的话基本是回答不出来的，所以在这把遇到的先记录下来。</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/11/12/复杂且奇葩的div-css布局/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/技术笔记/">技术笔记</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/11/CSS3媒体查询/" title="CSS3媒体查询" itemprop="url">CSS3媒体查询</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-11T14:03:47.000Z" itemprop="datePublished"> 发表于 2015-11-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="媒体查询解析">媒体查询解析</h2><p><b>响应式布局（Responsive Web design）</b> 指的是在网页开发过程中针对不同设备开发一套网站，然后根据用户行为以及设备环境（系统平台、屏幕尺寸、屏幕定向等）<b style="color:#ea6753;">自适应</b>地显示不同布局。<br>响应式布局的核心是媒体查询。<br><b>媒体查询（Media Query）</b> 是获取用户行为和设备环境、然后提供相应的CSS规则的过程的简称。<br>媒体查询让CSS可以更精准<b style="color:#ea6753;"> 作用于不同的媒体类型和同一媒体的不同条件。</b></p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/11/11/CSS3媒体查询/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/CSS3/">CSS3</a><a href="/tags/技术笔记/">技术笔记</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
    
     
@@ -133,7 +447,7 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/07/Javascript中post和get/" title="Javascript中post和get" itemprop="url">Javascript中post和get</a>
+      <a href="/2015/11/07/浅谈http中post和get/" title="浅谈 HTTP 中 POST 和 GET" itemprop="url">浅谈 HTTP 中 POST 和 GET</a>
   </h1>
   <p class="article-author">By
        
@@ -151,7 +465,7 @@
         
         <p class="article-more-link">
           
-            <a href="/2015/11/07/Javascript中post和get/#more">Read More</a>
+            <a href="/2015/11/07/浅谈http中post和get/#more">Read More</a>
           
        </p>
     </div>
@@ -350,292 +664,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/11/05/兼容性总结/" title="兼容性总结" itemprop="url">兼容性总结</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-04T23:47:10.000Z" itemprop="datePublished"> 发表于 2015-11-05</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="前言">前言</h2><p>标准网页设计的最大挑战不在于技术本身，而在于浏览器兼容性处理。所谓的浏览器兼容问题，就是当使用不同的浏览器（IE6、IE7、Firefox等）访问同一个页面时，可能会出现不一样的效果，出现这种现象的原因有很多种，当根本原因就是浏览器对于技术支持的标准不同造成的。</p>
-<p>IE浏览器对于标准技术的支持很不完善，这些问题可分为两种：一种是ＩＥ支持某种技术或功能，但是实现该功能的方法和途径与标准技术不同；另一种就是ＩＥ浏览器自身的解析机制存在很多ＢＵＧ，导致页面解析效果与标准不同。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/11/05/兼容性总结/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/兼容性/">兼容性</a><a href="/tags/前端/">前端</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/11/04/borde-none&border-0/" title=" border:none 与 border:0 的使用区别" itemprop="url"> border:none 与 border:0 的使用区别</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
-		
-  <p class="article-time">
-    <time datetime="2015-11-04T13:39:44.000Z" itemprop="datePublished"> 发表于 2015-11-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="前言">前言</h2><p>以前从来不会有这种失望，终于明白机会是留给有准备的人这句话是什么意思了，没有准备很好就不要有什么奢望，不要太嚣张了，保持思路清晰是一件很重要的事情，特别是在面试的时候；</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/11/04/borde-none&border-0/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/css/">css</a><a href="/tags/前端/">前端</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/10/28/前端试题/" title="前端试题" itemprop="url">前端试题</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
-		
-  <p class="article-time">
-    <time datetime="2015-10-28T13:49:33.000Z" itemprop="datePublished"> 发表于 2015-10-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="前言">前言</h2><p>通过做笔试，可以得到的应该不仅仅是一个题目，从笔试题目中就可以知道我们的理论知识以及专业知识如何，加油，路还长着呢~</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/10/28/前端试题/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/前端/">前端</a><a href="/tags/技术笔记/">技术笔记</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/10/25/Cookie-Session/" title="Cookie &amp; Session" itemprop="url">Cookie &amp; Session</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
-		
-  <p class="article-time">
-    <time datetime="2015-10-25T07:55:59.000Z" itemprop="datePublished"> 发表于 2015-10-25</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="前言">前言</h1><p>这是一篇学习笔记，接下来我是把网上以及书上的资料按照我的资料进行了整理得出，请批判阅读。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/10/25/Cookie-Session/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/学习笔记/">学习笔记</a><a href="/tags/技术笔记/">技术笔记</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/10/25/jQuery基础课程-学习笔记/" title="jQuery基础课程-学习笔记" itemprop="url">jQuery基础课程-学习笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
-		
-  <p class="article-time">
-    <time datetime="2015-10-25T01:23:31.000Z" itemprop="datePublished"> 发表于 2015-10-25</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="cookie插件">cookie插件</h3><ul>
-<li>cookie的有效时间可以自定义，若省略的话创建的就是会话cookie(session cookie)，将在用户退出浏览器时被删除；</li>
-<li>设置的有效时间的cookie会存储在硬盘上，存储在硬盘上的cookie可以在不同的浏览器进程间共享</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/jQuery/">jQuery</a><a href="/tags/前端/">前端</a><a href="/tags/学习笔记/">学习笔记</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
@@ -656,19 +687,23 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -680,10 +715,6 @@
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -692,7 +723,7 @@
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -701,6 +732,14 @@
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>

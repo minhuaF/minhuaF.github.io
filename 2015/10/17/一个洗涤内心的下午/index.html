@@ -1,3 +1,36 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
@@ -17,6 +50,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/10/17/一个洗涤内心的下午/index.html">
 <meta property="og:site_name" content="青桔柠檬">
 <meta property="og:description" content="在全世界都在找工作的时间，和好朋友去了广州的TIT创意园参加了题为“良匠归来”的创意市集。偷懒一下去开阔一下视野调整一下生活节奏还是不错的，每天在那么紧张的生活中度过，差点都不知道自己是谁了。">
+<meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆02.jpg">
 <meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集.jpg">
 <meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场03.jpg">
 <meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场02.jpg">
@@ -24,7 +58,7 @@
 <meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆02.jpg">
 <meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆01.jpg">
 <meta property="og:image" content="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-黄药师01.jpg">
-<meta property="og:updated_time" content="2015-10-17T15:28:31.000Z">
+<meta property="og:updated_time" content="2015-11-12T14:33:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个洗涤内心的下午">
 <meta name="twitter:description" content="在全世界都在找工作的时间，和好朋友去了广州的TIT创意园参加了题为“良匠归来”的创意市集。偷懒一下去开阔一下视野调整一下生活节奏还是不错的，每天在那么紧张的生活中度过，差点都不知道自己是谁了。">
@@ -96,30 +130,25 @@
 </header>
 	<div class="article-content">
 		
-		<center><br>在全世界都在找工作的时间，和好朋友去了广州的TIT创意园参加了题为“良匠归来”的创意市集。偷懒一下去开阔一下视野调整一下生活节奏还是不错的，每天在那么紧张的生活中度过，差点都不知道自己是谁了。<br><center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集.jpg" alt=""><br></center>
-
-<a id="more"></a>
+		<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆02.jpg" class="img-topic"></p>
+<p><center><br>在全世界都在找工作的时间，和好朋友去了广州的TIT创意园参加了题为“良匠归来”的创意市集。偷懒一下去开阔一下视野调整一下生活节奏还是不错的，每天在那么紧张的生活中度过，差点都不知道自己是谁了。<br><a id="more"></a><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集.jpg" class="img-center img-border"></center></p>
 <p>首先我们去的是<a href="http://www.shuter.com.cn/" target="_blank" rel="external"> 树德生活馆 </a>门前去抽奖了，哈哈，说实话，这是我第一次参加这种活动，以前总觉得这种活动不适合参加，不过也是“入乡随俗”了，来就参加别人策划的活动，这是一件很幸运的事情，不用思考背后的动机，就为了配合，以前还是觉得太自我了，不适合自己的，不愿意付出的都不会表现自我，然而发现其实活的单纯一点是一件很幸福的事情，好吧，我变了。</p>
-<blockquote>
-<p>旅行的意义，遇见最好的自己！</p>
-</blockquote>
+<p><b>旅行的意义，遇见最好的自己！</b></p>
 <p>不过<a href="http://www.shuter.com.cn/offline.html" target="_blank" rel="external"> 树德生活馆（T.I.T创意园林体验店） </a>是个周末好去处，接受文艺创意的熏陶，有时候这是一种生活态度。</p>
 <p>看，现场的装饰只是简简单单，却是那样的有意义。</p>
-<center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场03.jpg" alt=""><br><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场02.jpg" alt=""><br><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场04.jpg" alt=""><br></center>
-
+<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场03.jpg" class="img-center img-border"></p>
+<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场02.jpg" class="img-center img-border"></p>
+<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-现场04.jpg" class="img-center img-border"></p>
 <p>今天过去的时候最明显的就是体验一下不同人群的生活态度，感觉活在自己的世界里太久了，生活中除了代码和工作，已经没有任何的乐趣了，思维也变得越来单一。</p>
-<center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆02.jpg" alt=""><br></center>
-
+<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆02.jpg" class="img-center img-border"></p>
 <p>在体验馆中见到的都是艺术，随便一摆随便一件都是艺术品，而且价格平民，以后送同学的毕业礼物就在这里买就好了，还有一个就是其实见到可爱有趣的东西可以先买下来，不过也是等到有工作的时候，这样喜欢的东西可以拥有，然后要送人礼物的时候就不用挑选了，同时也是熏陶自己文艺气质的方式，喜欢的曾经拥有就好了。</p>
-<center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆01.jpg" alt=""><br></center>
-
+<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-数德生活馆01.jpg" class="img-center img-border"></p>
 <p>这个是我看到的创意书籍，看太多的技术相关书籍整个人都好呆呀，一点创意都没有，所以呀，还是要接触多一点这样开放性的活动才能让自己更懂得生活，也更能认识自己。主要是自己最近也被设计搞的头大，所以可以去看一下，应该还是很不错的。</p>
-<center><br><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-黄药师01.jpg" alt=""><br></center>
-
+<p><img src="http://7xn9eh.com1.z0.glb.clouddn.com/20151017-良匠归来市集-黄药师01.jpg" class="img-center img-border"></p>
 <p>接下来的就是关于“黄药师的皂”的故事了。本来是想来拿一下试用装的，体验一下没有接触过的领域会是怎么样的，所以关于黄药师的资料都粗略看了一下，对于这类型的创意以及创业理念表示敬畏，才明白世界真的很大，而且他们对生活的态度，对自然的敬畏，对顾客的体贴都让我很感触，当然，还有一个就是所散发出来文艺气质和文艺范，深深地吸引着我，看着<a href="http://drwong.cn/" target="_blank" rel="external"> 黄药师 </a>的博客主页中的文章文字就有一种不一样世界的感觉，在我的层面看来就是一个艺术家的级别，真的太厉害了。</p>
 <p>还有一个就是看到腾讯在T.I.T的微信部门，心里不禁一股酸爽，想起当时傻傻地去过腾讯的面试，结果那样了草率，自以为自己很厉害，其实自己什么都还不是……</p>
 <p>默默地，摸摸地，好像自己该做什么了。</p>
-</center>  
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -150,10 +179,10 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/17/我/" title="我">
+ <a href="/2015/10/24/2014-程序员的日子/" title="&#39;2014&#39;程序员的节日">
   <strong>上一篇：</strong><br/>
   <span>
-  我</span>
+  &#39;2014&#39;程序员的节日</span>
 </a>
 </div>
 
@@ -195,19 +224,23 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -219,10 +252,6 @@
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -231,7 +260,7 @@
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -240,6 +269,14 @@
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>

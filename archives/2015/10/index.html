@@ -1,3 +1,36 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
   <!DOCTYPE HTML>
 <html lang="zh-CN">
@@ -75,7 +108,7 @@
   <h2 class="archive-icon">2015/10</h2>
   
   <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015 年 11 月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015 年 10 月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015 年 09 月</a><span class="archive-list-count">1</span></li></ul>
+   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015 年 11 月</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015 年 10 月</a><span class="archive-list-count">10</span></li></ul>
  </div>
   
 </div>
@@ -130,19 +163,6 @@
 
 
     <h1 itemprop="name">&#39;2014&#39;程序员的节日</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/10/17/我/" title="我" itemprop="url">
-  
-
-    <time datetime="2015-10-17T15:47:03.000Z" itemprop="datePublished">2015-10-17</time>
-
-
-    <h1 itemprop="name">我</h1>
 
   </a>
 </section>
@@ -212,10 +232,19 @@
   </a>
 </section>
 
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/10/03/css-多用组合少用继承的探讨/" title="css-&quot;多用组合，少用继承&quot;的探讨" itemprop="url">
+  
 
-  <nav id="page-nav" class="clearfix archive-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2015/10/page/2/">2</a><a class="extend next" rel="next" href="/archives/2015/10/page/2/">Next<span></span></a>
-  </nav>
+    <time datetime="2015-10-03T07:53:43.000Z" itemprop="datePublished">2015-10-03</time>
+
+
+    <h1 itemprop="name">css-&quot;多用组合，少用继承&quot;的探讨</h1>
+
+  </a>
+</section>
+
 
   </div>
 </div>

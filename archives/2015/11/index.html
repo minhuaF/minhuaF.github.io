@@ -1,3 +1,36 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
   <!DOCTYPE HTML>
 <html lang="zh-CN">
@@ -75,12 +108,77 @@
   <h2 class="archive-icon">2015/11</h2>
   
   <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015 年 11 月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015 年 10 月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015 年 09 月</a><span class="archive-list-count">1</span></li></ul>
+   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">2015 年 11 月</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015 年 10 月</a><span class="archive-list-count">10</span></li></ul>
  </div>
   
 </div>
 <div id="main" class="archive-part clearfix">
   <div id="archive-page">
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/11/17/笔试题-数据结构/" title="笔试题-数据结构&amp;数据库" itemprop="url">
+  
+
+    <time datetime="2015-11-17T03:09:36.000Z" itemprop="datePublished">2015-11-17</time>
+
+
+    <h1 itemprop="name">笔试题-数据结构&amp;数据库</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/11/13/MISSYOU/" title="MISSYOU" itemprop="url">
+  
+
+    <time datetime="2015-11-13T10:20:46.000Z" itemprop="datePublished">2015-11-13</time>
+
+
+    <h1 itemprop="name">MISSYOU</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/11/13/基础算法/" title="基础算法" itemprop="url">
+  
+
+    <time datetime="2015-11-13T01:54:02.000Z" itemprop="datePublished">2015-11-13</time>
+
+
+    <h1 itemprop="name">基础算法</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/11/12/复杂且奇葩的div-css布局/" title="复杂且奇葩的div+css布局" itemprop="url">
+  
+
+    <time datetime="2015-11-12T09:19:48.000Z" itemprop="datePublished">2015-11-12</time>
+
+
+    <h1 itemprop="name">复杂且奇葩的div+css布局</h1>
+
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2015/11/11/CSS3媒体查询/" title="CSS3媒体查询" itemprop="url">
+  
+
+    <time datetime="2015-11-11T14:03:47.000Z" itemprop="datePublished">2015-11-11</time>
+
+
+    <h1 itemprop="name">CSS3媒体查询</h1>
+
+  </a>
+</section>
 
   <section class="post" itemscope itemprop="blogPost">
   
@@ -97,13 +195,13 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2015/11/07/Javascript中post和get/" title="Javascript中post和get" itemprop="url">
+    <a href="/2015/11/07/浅谈http中post和get/" title="浅谈 HTTP 中 POST 和 GET" itemprop="url">
   
 
     <time datetime="2015-11-07T12:13:43.000Z" itemprop="datePublished">2015-11-07</time>
 
 
-    <h1 itemprop="name">Javascript中post和get</h1>
+    <h1 itemprop="name">浅谈 HTTP 中 POST 和 GET</h1>
 
   </a>
 </section>
@@ -147,32 +245,10 @@
   </a>
 </section>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/05/兼容性总结/" title="兼容性总结" itemprop="url">
-  
 
-    <time datetime="2015-11-04T23:47:10.000Z" itemprop="datePublished">2015-11-05</time>
-
-
-    <h1 itemprop="name">兼容性总结</h1>
-
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/04/borde-none&border-0/" title=" border:none 与 border:0 的使用区别" itemprop="url">
-  
-
-    <time datetime="2015-11-04T13:39:44.000Z" itemprop="datePublished">2015-11-04</time>
-
-
-    <h1 itemprop="name"> border:none 与 border:0 的使用区别</h1>
-
-  </a>
-</section>
-
+  <nav id="page-nav" class="clearfix archive-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2015/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2015/11/page/2/">Next<span></span></a>
+  </nav>
 
   </div>
 </div>

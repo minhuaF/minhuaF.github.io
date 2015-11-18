@@ -1,3 +1,36 @@
+<script type="text/javascript">
+    //屏蔽左键文本选择
+    document.onmousedown = function() {
+        return false;
+    };
+    document.onselectstart = function() {
+        return false;
+    };
+    //屏蔽右键
+    if (window.Event)
+        document.captureEvents(Event.MOUSEUP);
+    function nocontextmenu(){
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    function norightclick(e){
+        if (window.Event)
+    {
+    if (e.which == 2 || e.which == 3)
+        return false;
+    }
+    else
+        if (event.button == 2 || event.button == 3)
+    {
+        event.cancelBubble = true
+        event.returnValue = false;
+        return false;
+    }
+    }
+    document.oncontextmenu = nocontextmenu; // for IE5+
+    document.onmousedown = norightclick; // for all others
+</script>
 
  <!DOCTYPE HTML>
 <html lang="zh-CN">
@@ -17,7 +50,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/10/25/Cookie-Session/index.html">
 <meta property="og:site_name" content="青桔柠檬">
 <meta property="og:description" content="前言这是一篇学习笔记，接下来我是把网上以及书上的资料按照我的资料进行了整理得出，请批判阅读。">
-<meta property="og:updated_time" content="2015-10-25T08:33:59.000Z">
+<meta property="og:updated_time" content="2015-11-14T12:08:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cookie & Session">
 <meta name="twitter:description" content="前言这是一篇学习笔记，接下来我是把网上以及书上的资料按照我的资料进行了整理得出，请批判阅读。">
@@ -96,7 +129,7 @@
 </li>
 <li><p><b>作用</b>：保存一个登陆状态；</p>
 </li>
-<li><p><b>存放位置</b>：客户端的浏览器中；</p>
+<li><p><b>存放位置</b>：当设置了过期失效时间时，cookie就会存储在硬盘里面；若没有设置失效时间，当会话结束时失效，这是cookie会存储在内存里。</p>
 </li>
 <li><p><b>原理</b>：客户端请求服务器，若服务器需要记录该用户状态，就是用方法向客户端浏览器颁发一个Cookie，客户端浏览器把cookie保存起来，当浏览器再请求该网站是，浏览器把请求的网址连同该cookie一同提交给服务器，服务器检查该cookie，以此来辨认用户状态。</p>
 </li>
@@ -200,19 +233,23 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>10</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/前端/" title="前端">前端<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/技术笔记/" title="技术笔记">技术笔记<sup>8</sup></a></li>
+				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/成长历程/" title="成长历程">成长历程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/jQuery/" title="jQuery">jQuery<sup>2</sup></a></li>
 			
 		
 			
@@ -224,10 +261,6 @@
 			
 		
 			
-				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/兼容性/" title="兼容性">兼容性<sup>1</sup></a></li>
 			
 		
@@ -236,7 +269,7 @@
 			
 		
 			
-				<li><a href="/tags/联系我/" title="联系我">联系我<sup>1</sup></a></li>
+				<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 			
 		
 			
@@ -245,6 +278,14 @@
 		
 			
 				<li><a href="/tags/观后感/" title="观后感">观后感<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/心情寄语/" title="心情寄语">心情寄语<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS3/" title="CSS3">CSS3<sup>1</sup></a></li>
 			
 		
 		</ul>

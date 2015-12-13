@@ -37,23 +37,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>MISSYOU | 青桔柠檬</title>
+    <title>兼容性1 | 青桔柠檬</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Hidden Feng">
     
 
     
-    <meta name="description" content="莫名突然好想你">
+    <meta name="description" content="前言标准网页设计的最大挑战不在于技术本身，而在于浏览器兼容性处理。所谓的浏览器兼容问题，就是当使用不同的浏览器（IE6、IE7、Firefox等）访问同一个页面时，可能会出现不一样的效果，出现这种现象的原因有很多种，当根本原因就是浏览器对于技术支持的标准不同造成的。
+IE浏览器对于标准技术的支持很不完善，这些问题可分为两种：一种是ＩＥ支持某种技术或功能，但是实现该功能的方法和途径与标准技术不同；另">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MISSYOU">
-<meta property="og:url" content="http://yoursite.com/2015/11/13/MISSYOU/index.html">
+<meta property="og:title" content="兼容性1">
+<meta property="og:url" content="http://yoursite.com/2015/11/05/兼容性1/index.html">
 <meta property="og:site_name" content="青桔柠檬">
-<meta property="og:description" content="莫名突然好想你">
-<meta property="og:updated_time" content="2015-11-13T10:50:46.000Z">
+<meta property="og:description" content="前言标准网页设计的最大挑战不在于技术本身，而在于浏览器兼容性处理。所谓的浏览器兼容问题，就是当使用不同的浏览器（IE6、IE7、Firefox等）访问同一个页面时，可能会出现不一样的效果，出现这种现象的原因有很多种，当根本原因就是浏览器对于技术支持的标准不同造成的。
+IE浏览器对于标准技术的支持很不完善，这些问题可分为两种：一种是ＩＥ支持某种技术或功能，但是实现该功能的方法和途径与标准技术不同；另">
+<meta property="og:updated_time" content="2015-11-20T06:37:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MISSYOU">
-<meta name="twitter:description" content="莫名突然好想你">
+<meta name="twitter:title" content="兼容性1">
+<meta name="twitter:description" content="前言标准网页设计的最大挑战不在于技术本身，而在于浏览器兼容性处理。所谓的浏览器兼容问题，就是当使用不同的浏览器（IE6、IE7、Firefox等）访问同一个页面时，可能会出现不一样的效果，出现这种现象的原因有很多种，当根本原因就是浏览器对于技术支持的标准不同造成的。
+IE浏览器对于标准技术的支持很不完善，这些问题可分为两种：一种是ＩＥ支持某种技术或功能，但是实现该功能的方法和途径与标准技术不同；另">
 
     
     <link rel="alternative" href="/atom.xml" title="青桔柠檬" type="application/atom+xml">
@@ -109,26 +112,28 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/13/MISSYOU/" title="MISSYOU" itemprop="url">MISSYOU</a>
+      <a href="/2015/11/05/兼容性1/" title="兼容性1" itemprop="url">兼容性1</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Hidden Feng" target="_blank" itemprop="author">Hidden Feng</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-13T10:20:46.000Z" itemprop="datePublished"> 发表于 2015-11-13</time>
+    <time datetime="2015-11-04T23:47:10.000Z" itemprop="datePublished"> 发表于 2015-11-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p>莫名突然好想你</p>
+		<h2 id="前言">前言</h2><p>标准网页设计的最大挑战不在于技术本身，而在于浏览器兼容性处理。所谓的浏览器兼容问题，就是当使用不同的浏览器（IE6、IE7、Firefox等）访问同一个页面时，可能会出现不一样的效果，出现这种现象的原因有很多种，当根本原因就是浏览器对于技术支持的标准不同造成的。</p>
+<p>IE浏览器对于标准技术的支持很不完善，这些问题可分为两种：一种是ＩＥ支持某种技术或功能，但是实现该功能的方法和途径与标准技术不同；另一种就是ＩＥ浏览器自身的解析机制存在很多ＢＵＧ，导致页面解析效果与标准不同。</p>
 <a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=64317&auto=1&height=66"></iframe>
-
-
-
-<p><a href="http://thatblstudio.github.io/blog/how-to-use-163-music-player/" target="_blank" rel="external">添加音乐的方式</a></p>
+<h2 id="正文">正文</h2><h3 id="1_去掉_input,button_的边框">1 去掉 input,button 的边框</h3><p>一般使用到的是 border:none; 即可在大部分的浏览器中实现效果，但是IE6、IE7不能识别 border:none; 故要进行兼容性处理；解决办法移步<a href=""> border:none 与 border:0 的使用区别 </a></p>
+<h3 id="2_IE6_不支持_position:fixed;">2 IE6 不支持 position:fixed;</h3><h3 id="3_锚点伪类_:hover_在IE6下只有a元素支持，_:active只有IE6-7不支持，_:focus_在IE6-7下不被支持。">3 锚点伪类  :hover 在IE6下只有a元素支持， :active只有IE6-7不支持， :focus 在IE6-7下不被支持。</h3><p>若要解决IE6下其他元素的“:hover”效果，可以选择使用jquery中的 hover() 方法。</p>
+<h3 id="4_IE6-8不支持_“:checked”,”:enabled”,”:disabled”_这三种UI元素状态伪类">4 IE6-8不支持 “:checked”,”:enabled”,”:disabled” 这三种<b>UI元素状态伪类</b></h3><h3 id="参考资料">参考资料</h3><ul>
+<li><a href="http://www.luoxiao123.cn/6888.html" target="_blank" rel="external">网页设计html+css兼容性问题处理办法汇总</a></li>
+<li><a href="http://blog.csdn.net/liu__hua/article/details/40106595" target="_blank" rel="external">小技巧css解决移动端ios不兼容position:fixed属性，无需插件</a></li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -137,7 +142,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/心情寄语/">心情寄语</a>
+  <span></span> <a href="/tags/兼容性/">兼容性</a><a href="/tags/前端/">前端</a>
   </div>
 
 </div>
@@ -146,7 +151,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/11/13/MISSYOU/" data-title="MISSYOU | 青桔柠檬" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/11/05/兼容性1/" data-title="兼容性1 | 青桔柠檬" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -160,18 +165,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/11/17/笔试题-数据结构/" title="笔试题-数据结构&amp;数据库">
+ <a href="/2015/11/05/《锋利的jQuery》/" title="《锋利的jQuery》">
   <strong>上一篇：</strong><br/>
   <span>
-  笔试题-数据结构&amp;数据库</span>
+  《锋利的jQuery》</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/11/13/基础算法/"  title="基础算法">
+<a href="/2015/11/04/borde-none&border-0/"  title=" border:none 与 border:0 的使用区别">
  <strong>下一篇：</strong><br/> 
- <span>基础算法
+ <span> border:none 与 border:0 的使用区别
 </span>
 </a>
 </div>
@@ -186,7 +191,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1_去掉_input,button_的边框"><span class="toc-number">2.1.</span> <span class="toc-text">1 去掉 input,button 的边框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2_IE6_不支持_position:fixed;"><span class="toc-number">2.2.</span> <span class="toc-text">2 IE6 不支持 position:fixed;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3_锚点伪类_:hover_在IE6下只有a元素支持，_:active只有IE6-7不支持，_:focus_在IE6-7下不被支持。"><span class="toc-number">2.3.</span> <span class="toc-text">3 锚点伪类  :hover 在IE6下只有a元素支持， :active只有IE6-7不支持， :focus 在IE6-7下不被支持。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4_IE6-8不支持_“:checked”,”:enabled”,”:disabled”_这三种UI元素状态伪类"><span class="toc-number">2.4.</span> <span class="toc-text">4 IE6-8不支持 “:checked”,”:enabled”,”:disabled” 这三种UI元素状态伪类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">2.5.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
  
   </div>
 
